@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const totalElement = document.querySelector(".total");
   let total = parseFloat(totalElement.textContent.replace("$", "").trim());
 
+  //Increase quantity
   plusBtn.forEach((button) => {
     button.addEventListener("click", () => {
       const cardBody = button.closest(".card-body");
@@ -23,17 +24,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
       total += unitPrice;
       totalElement.textContent = total + " $";
-
-      /* const heartBtn = cardBody.querySelector(".fa-heart");
-      heartBtn.addEventListener(
-        ("click",
-        () => {
-          heartBtn.style.backgroundColor = "red";
-        })
-      ); */
     });
   });
 
+  //Subtruct quantity
   minusBtn.forEach((button) => {
     button.addEventListener("click", () => {
       const cardBody = button.closest(".card-body");
@@ -54,6 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  //Delete product
   deleteBtn.forEach((button) => {
     button.addEventListener("click", () => {
       const cardBody = button.closest(".card-body");
@@ -71,6 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  // Like product
   heartBtn.forEach((button) => {
     button.addEventListener("click", () => {
       if (button.style.color != "red") {
